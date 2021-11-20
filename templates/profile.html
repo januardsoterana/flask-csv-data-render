@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Smarthr - Bootstrap Admin Template">
+    <meta name="keywords"
+          content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Employee Profile - HRMS admin template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+    <!-- Lineawesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/line-awesome.min.css') }}">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}">
+
+    <!-- Tagsinput CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+			<script src="{{ url_for('static', filename='js/html5shiv.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
+		<![endif]-->
+</head>
+<body>
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+
+    <!-- Header -->
+    <div class="header">
+
+        <!-- Logo -->
+        <div class="header-left">
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" width="40" height="40" alt="">
+            </a>
+        </div>
+        <!-- /Logo -->
+
+        <a id="toggle_btn" href="javascript:void(0);">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+        </a>
+
+        <!-- Header Title -->
+        <div class="page-title-box">
+            <h3>Driver Retention</h3>
+        </div>
+        <!-- /Header Title -->
+
+        <a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
+
+        <!-- Header Menu -->
+        <ul class="nav user-menu">
+
+
+            <!-- Notifications -->
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <i class="fa fa-bell-o"></i> <span class="badge badge-pill">2</span>
+                </a>
+                <div class="dropdown-menu notifications">
+                    <div class="topnav-dropdown-header">
+                        <span class="notification-title">Notifications</span>
+                        <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                    </div>
+                    <div class="noti-content">
+                        <ul class="notification-list">
+                            <li class="notification-message">
+                                <a href="/activities">
+                                    <div class="media">
+												<span class="avatar">
+													<img alt=""
+                                                         src="{{ url_for('static', filename='img/profiles/avatar-02.jpg') }}">
+												</span>
+                                        <div class="media-body">
+                                            <p class="noti-details"><span class="noti-title">Richard Miles</span> has
+                                                been <span class="noti-title">off-duty for more than a week </span></p>
+                                            <p class="noti-time"><span class="notification-time">6 hours ago</span></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="/activities">
+                                    <div class="media">
+												<span class="avatar">
+													<img alt=""
+                                                         src="{{ url_for('static', filename='img/profiles/avatar-03.jpg') }}">
+												</span>
+                                        <div class="media-body">
+                                            <p class="noti-details"><span class="noti-title">Ricardo Ramirez</span>
+                                                truck <span class="noti-title">in shop</span></p>
+                                            <p class="noti-time"><span class="notification-time">11 hours ago</span></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="/activities">View all Notifications</a>
+                    </div>
+                </div>
+            </li>
+            <!-- /Notifications -->
+
+
+            <li class="nav-item dropdown has-arrow main-drop">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img
+                                    src="{{ url_for('static', filename='img/profiles/avatar-21.jpg') }}" alt="">
+							<span class="status online"></span></span>
+                    <span>Admin</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">My Profile</a>
+                    <a class="dropdown-item" href="/login">Logout</a>
+                </div>
+            </li>
+        </ul>
+        <!-- /Header Menu -->
+
+        <!-- Mobile Menu -->
+        <div class="dropdown mobile-user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                    class="fa fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="/profile">My Profile</a>
+                <a class="dropdown-item" href="/login">Logout</a>
+            </div>
+        </div>
+        <!-- /Mobile Menu -->
+
+    </div>
+    <!-- /Header -->
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="menu-title">
+                        <span>Main</span>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a href="/employee-dashboard">Employee Dashboard</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-title">
+                        <span>Employees</span>
+                    </li>
+                    <li class="submenu">
+                        <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a href="/employees">All Employees</a></li>
+                            <li><a href="/quits">Quits</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Sidebar -->
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <!-- Page Content -->
+        <div class="content container-fluid">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-title">Profile</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Profile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Header -->
+
+            <div class="card mb-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="profile-view">
+                                <div class="profile-img-wrap">
+                                    <div class="profile-img">
+                                        <a href="#"><img alt=""
+                                                         src="{{ url_for('static', filename='img/profiles/avatar-02.jpg') }}"></a>
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0">{{ data['first_name'] }} {{ data['last_name'] }}</h3>
+                                                <h6 class="text-muted">{{ data['designation'] }}</h6>
+                                                <div class="small doj text-muted">Employee ID
+                                                    : {{ data['driver_id'] }}</div>
+                                                <div class="small doj text-muted">Tenure
+                                                    : {{ data['tenure_days'] }}</div>
+                                                <div class="staff-msg"><a class="btn btn-custom">Send Message</a> &nbsp;
+                                                    <a class="btn btn-custom">Send Survey</a> &nbsp; <a
+                                                            class="btn btn-custom">Call Driver</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="personal-info">
+                                                <li>
+                                                    <div class="title"><h3 class="user-name m-t-0 mb-0">Quit Score:</h3>
+                                                    </div>
+                                                    <div class="text">
+                                                        <h3 class="user-name m-t-0 mb-0">
+                                                                    <span style="color: hsl(
+                                                                            {{ 120 if data['quit_score'] < 70 else 120 - (120 * (data['quit_score'] / 100)) }},
+                                                                            100%, 50%)">
+                                                                        {{ data['quit_score'] }}%
+                                                                    </span>
+                                                            {% if data['quit_score'] > data['previous_score'] %}
+                                                                <span style="color:red"> &#8593;  {{ data['quit_score'] - data['previous_score'] }}%</span>
+                                                            {% endif %}
+                                                        </h3>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="title">Reason:</div>
+                                                    <div class="text"
+                                                         style="text-align:left">{{ data['reason'] }} </div>
+                                                    <!--<a href="#" class="question-icon" data-toggle="modal" data-target="#training_info"><i class="fa fa-question-circle"></i></a>-->
+                                                </li>
+
+                                                <li>
+                                                    <div class="title">Adjust to see effects on score:</div>
+                                                    <br/><br/>
+                                                    <label>Driving Hours per Week</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Onduty
+                                                    Hours per Week</label>
+                                                    <div class="form-group">
+                                                        <input type="range" min="8" max="60"
+                                                               value="{{ data['driving_time_per_week'] }}"
+                                                               class="slider" id="drive_time">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="range" min="8" max="72"
+                                                               value="{{ data['onduty_time_per_week'] }}" class="slider"
+                                                               id="onduty">
+                                                    </div>
+                                                    <label>Night Sleep Time per Week</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Day
+                                                    Sleep Time per Week</label>
+                                                    <div class="form-group">
+                                                        <input type="range" min="1" max="55"
+                                                               value="{{ data['night_sleep_time_per_week'] }}"
+                                                               class="slider" id="night_sleep_time">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="range" min="1" max="55"
+                                                               value="{{ data['day_sleep_time_per_week'] }}"
+                                                               class="slider" id="day_sleep_time">
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pro-edit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card tab-box">
+                <div class="row user-tabs">
+                    <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
+                        <ul class="nav nav-tabs nav-tabs-bottom">
+                            <li class="nav-item"><a href="#emp_profile" data-toggle="tab" class="nav-link active">Profile</a>
+                            </li>
+                            <li class="nav-item"><a href="#emp_projects" data-toggle="tab" class="nav-link">Conversations</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content">
+
+                <!-- Profile Info Tab -->
+                <div id="emp_profile" class="pro-overview tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-md-6 d-flex">
+                            <div class="card profile-box flex-fill">
+                                <div class="card-body">
+                                    <h3 class="card-title">Personal <a href="#" class="edit-icon" data-toggle="modal"
+                                                                       data-target="#personal_info_modal"><i
+                                            class="fa fa-pencil"></i></a></h3>
+                                    <ul class="personal-info">
+
+                                        <li>
+                                            <div class="title">Phone:</div>
+                                            <div class="text"><a href="">609-916-5387</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Email:</div>
+                                            <div class="text"><a href="">johndoe@gmail.com</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Birthday:</div>
+                                            <div class="text">24th July</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Address:</div>
+                                            <div class="text">1861 Bayonne Ave, Manchester Township, NJ, 08759</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Emergency Contact</div>
+                                            <div class="text">Jenine, Wife, 609-916-5388</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Gender:</div>
+                                            <div class="text">Male</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Marital status</div>
+                                            <div class="text">Single</div>
+                                        </li>
+
+                                        <li>
+                                            <div class="title">No. of children</div>
+                                            <div class="text">2</div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex">
+                            <div class="card profile-box flex-fill">
+                                <div class="card-body">
+                                    <h3 class="card-title">HOS Stats <a href="#" data-toggle="modal"
+                                                                        data-target="#emergency_contact_modal"></a></h3>
+                                    <ul class="personal-info">
+                                        <li>
+                                            <div class="title">Driving Time/Week</div>
+                                            <div class="text">{{ data['driving_time_per_week'] }} hours across 6 days
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title">On Duty Time/Week</div>
+                                            <div class="text">{{ data['onduty_time_per_week'] }} hours across 6 days
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Unproductive Time/Week</div>
+                                            <div class="text">{{ data['onduty_time_per_week'] - data['driving_time_per_week'] }}
+                                                hours across 6 days
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    <ul class="personal-info">
+                                        <li>
+                                            <div class="title">Day Sleep Time/Week</div>
+                                            <div class="text">{{ data['day_sleep_time_per_week'] }} hours</div>
+                                        </li>
+                                        <li>
+                                            <div class="title">Night Sleep Time/Week</div>
+                                            <div class="text">{{ data['night_sleep_time_per_week'] }} hours</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex">
+                            <div class="card profile-box flex-fill">
+                                <div class="card-body">
+                                    <h3 class="card-title">Education <a href="#" class="edit-icon" data-toggle="modal"
+                                                                        data-target="#education_info"><i
+                                            class="fa fa-pencil"></i></a></h3>
+                                    <div class="experience-box">
+                                        <ul class="experience-list">
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">EZ Wheels Driving School</a>
+                                                        <div>CDL License</div>
+                                                        <span class="time">2017 - 2017</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">Newark Evening High School</a>
+                                                        <span class="time">2013</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex">
+                            <div class="card profile-box flex-fill">
+                                <div class="card-body">
+                                    <h3 class="card-title">Experience <a href="#" class="edit-icon" data-toggle="modal"
+                                                                         data-target="#experience_info"><i
+                                            class="fa fa-pencil"></i></a></h3>
+                                    <div class="experience-box">
+                                        <ul class="experience-list">
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">Truck Driver at Zen Trucking
+                                                            Corporation</a>
+                                                        <span class="time">Aug 2018 - Nov 2019</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="experience-user">
+                                                    <div class="before-circle"></div>
+                                                </div>
+                                                <div class="experience-content">
+                                                    <div class="timeline-content">
+                                                        <a href="#/" class="name">Truck Driver at Ron Transportation</a>
+                                                        <span class="time">Jan 2017 - Jun 2018</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Profile Info Tab -->
+
+
+                <!-- Conversations Tab -->
+                <div class="tab-pane fade" id="emp_projects">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card mb-0">
+                                <div class="card-header">
+                                    <h3 class="card-title">Driver Call <a href="#" class="edit-icon" data-toggle="modal"
+                                                                          data-target="#training_info"><i
+                                            class="fa fa-question-circle"></i></a></h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/profile/{{ data['driver_id'] }}" method="post">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="card-title">Call Details</h4>
+
+                                                <div class="form-group">
+                                                    <label>Call Date</label>
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control datetimepicker" name="call_date" required>
+                                                    </div>
+                                                    <label>How did you contact the driver?</label>
+                                                    <select class="select" name="contact_way" required oninvalid="this.setCustomValidity('Please select call of mode.')">
+                                                        <option value="">Mode of Call</option>
+                                                        <option value="in-person">In-person</option>
+                                                        <option value="phone">Phone</option>
+                                                        <option value="email">Email</option>
+                                                        <option value="text">Text</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>What did the driver say?</label>
+                                                    <textarea rows="5" cols="5" class="form-control" name="message_content"
+                                                              placeholder="Enter message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="card-title">Follow Up</h4>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Does the Driver Need a Follow Up?</label>
+                                                            <select class="select" name="is_follow" required oninvalid="this.setCustomValidity('Please select one item.')">
+                                                                <option value="">Select</option>
+                                                                <option value="yes">Yes</option>
+                                                                <option value="no">No</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="focus-label">When?</label>
+                                                            <div class="cal-icon">
+                                                                <input type="text" required
+                                                                       class="form-control floating datetimepicker" name="follow_date">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>What help did the driver need?</label>
+                                                    <textarea rows="5" cols="5" class="form-control" name="help_content"
+                                                              placeholder="Enter message"></textarea>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="driver_id" value="{{ data['driver_id'] }}">
+
+                                        </div>
+                                        <div class="staff-msg" style="text-align:center">
+                                            <button class="btn btn-custom">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <div class="row">
+                            {% for driver_call in driver_calls %}
+                                <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="dropdown profile-action">
+                                                <a aria-expanded="false" data-toggle="dropdown"
+                                                   class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a data-target="#edit_project" data-toggle="modal" href="#"
+                                                       class="dropdown-item"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a data-target="#delete_project" data-toggle="modal" href="#"
+                                                       class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                            <h4 class="project-title">
+                                                Conversation Date: {{ driver_call['call_date']|formatdatetime }} | {{ driver_call['contact_way']|capitalize }}
+                                            </h4>
+                                            <p class="text-muted">{{ driver_call['message_content'] if driver_call['message_content'] else '-' }}</p>
+
+                                            <p class="m-b-5">Score <span class="sub-title float-right">70%</span></p>
+                                            <div class="progress progress-xs mb-0">
+                                                <div style="width: 70%" title="" data-toggle="tooltip" role="progressbar"
+                                                     class="progress-bar bg-warning"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown profile-action">
+                                            <a aria-expanded="false" data-toggle="dropdown"
+                                               class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a data-target="#edit_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a data-target="#delete_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                        <h4 class="project-title">Conversation Date: 17 May 2021 | Phone</h4>
+                                        <p class="text-muted">John was not happy about his pay. He wanted to see if he
+                                            can get more miles and something that is closer to home.
+                                        </p>
+
+                                        <p class="m-b-5">Score <span class="sub-title float-right">70%</span></p>
+                                        <div class="progress progress-xs mb-0">
+                                            <div style="width: 70%" title="" data-toggle="tooltip" role="progressbar"
+                                                 class="progress-bar bg-warning"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown profile-action">
+                                            <a aria-expanded="false" data-toggle="dropdown"
+                                               class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a data-target="#edit_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a data-target="#delete_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                        <h4 class="project-title">Conversation Date: 10 May 2021 | In-person</h4>
+                                        <p class="text-muted">John had a new baby 2 weeks ago and things are settling
+                                            down at home. He would like to work closer to home so he can get back home
+                                            every week.
+                                        </p>
+
+                                        <p class="m-b-5">Score <span class="sub-title float-right">79%</span></p>
+                                        <div class="progress progress-xs mb-0">
+                                            <div style="width: 79%" title="" data-toggle="tooltip" role="progressbar"
+                                                 class="progress-bar bg-danger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown profile-action">
+                                            <a aria-expanded="false" data-toggle="dropdown"
+                                               class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a data-target="#edit_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a data-target="#delete_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                        <h4 class="project-title">Conversation Date: 3 May 2021</h4>
+                                        <p class="text-muted"> -
+                                        </p>
+
+                                        <p class="m-b-5">Score <span class="sub-title float-right">40%</span></p>
+                                        <div class="progress progress-xs mb-0">
+                                            <div style="width: 40%" title="" data-toggle="tooltip" role="progressbar"
+                                                 class="progress-bar bg-grey"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="dropdown profile-action">
+                                            <a aria-expanded="false" data-toggle="dropdown"
+                                               class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a data-target="#edit_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a data-target="#delete_project" data-toggle="modal" href="#"
+                                                   class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                        <h4 class="project-title">Conversation Date: 26 April 2021</h4>
+                                        <p class="text-muted"> -
+                                        </p>
+
+                                        <p class="m-b-5">Score <span class="sub-title float-right">30%</span></p>
+                                        <div class="progress progress-xs mb-0">
+                                            <div style="width: 30%" title="" data-toggle="tooltip" role="progressbar"
+                                                 class="progress-bar bg-grey"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                </div>
+                <!-- /Projects Tab -->
+
+                <!-- Bank Statutory Tab -->
+                <div class="tab-pane fade" id="bank_statutory">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"> Basic Salary Information</h3>
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Salary basis <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select salary basis type</option>
+                                                <option>Hourly</option>
+                                                <option>Daily</option>
+                                                <option>Weekly</option>
+                                                <option>Monthly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Salary amount <small class="text-muted">per
+                                                month</small></label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">$</span>
+                                                </div>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Type your salary amount" value="0.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Payment type</label>
+                                            <select class="select">
+                                                <option>Select payment type</option>
+                                                <option>Bank transfer</option>
+                                                <option>Check</option>
+                                                <option>Cash</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h3 class="card-title"> PF Information</h3>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">PF contribution</label>
+                                            <select class="select">
+                                                <option>Select PF contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">PF No. <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select PF contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Employee PF rate</label>
+                                            <select class="select">
+                                                <option>Select PF contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Additional rate <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select additional rate</option>
+                                                <option>0%</option>
+                                                <option>1%</option>
+                                                <option>2%</option>
+                                                <option>3%</option>
+                                                <option>4%</option>
+                                                <option>5%</option>
+                                                <option>6%</option>
+                                                <option>7%</option>
+                                                <option>8%</option>
+                                                <option>9%</option>
+                                                <option>10%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Total rate</label>
+                                            <input type="text" class="form-control" placeholder="N/A" value="11%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Employee PF rate</label>
+                                            <select class="select">
+                                                <option>Select PF contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Additional rate <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select additional rate</option>
+                                                <option>0%</option>
+                                                <option>1%</option>
+                                                <option>2%</option>
+                                                <option>3%</option>
+                                                <option>4%</option>
+                                                <option>5%</option>
+                                                <option>6%</option>
+                                                <option>7%</option>
+                                                <option>8%</option>
+                                                <option>9%</option>
+                                                <option>10%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Total rate</label>
+                                            <input type="text" class="form-control" placeholder="N/A" value="11%">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <h3 class="card-title"> ESI Information</h3>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">ESI contribution</label>
+                                            <select class="select">
+                                                <option>Select ESI contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">ESI No. <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select ESI contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Employee ESI rate</label>
+                                            <select class="select">
+                                                <option>Select ESI contribution</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Additional rate <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="select">
+                                                <option>Select additional rate</option>
+                                                <option>0%</option>
+                                                <option>1%</option>
+                                                <option>2%</option>
+                                                <option>3%</option>
+                                                <option>4%</option>
+                                                <option>5%</option>
+                                                <option>6%</option>
+                                                <option>7%</option>
+                                                <option>8%</option>
+                                                <option>9%</option>
+                                                <option>10%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Total rate</label>
+                                            <input type="text" class="form-control" placeholder="N/A" value="11%">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="submit-section">
+                                    <button class="btn btn-primary submit-btn" type="submit">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Bank Statutory Tab -->
+
+            </div>
+        </div>
+        <!-- /Page Content -->
+
+        <!-- Profile Modal -->
+        <div id="profile_info" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Profile Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="profile-img-wrap edit-img">
+                                        <img class="inline-block"
+                                             src="{{ url_for('static', filename='img/profiles/avatar-02.jpg') }}"
+                                             alt="user">
+                                        <div class="fileupload btn">
+                                            <span class="btn-text">edit</span>
+                                            <input class="upload" type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" value="John">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" value="Doe">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Birth Date</label>
+                                                <div class="cal-icon">
+                                                    <input class="form-control datetimepicker" type="text"
+                                                           value="05/06/1985">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                                <select class="select form-control">
+                                                    <option value="male selected">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" value="4487 Snowbird Lane">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input type="text" class="form-control" value="New York">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" class="form-control" value="United States">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Pin Code</label>
+                                        <input type="text" class="form-control" value="10523">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="text" class="form-control" value="631-889-3206">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Department <span class="text-danger">*</span></label>
+                                        <select class="select">
+                                            <option>Select Department</option>
+                                            <option>Web Development</option>
+                                            <option>IT Management</option>
+                                            <option>Marketing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Designation <span class="text-danger">*</span></label>
+                                        <select class="select">
+                                            <option>Select Designation</option>
+                                            <option>Web Designer</option>
+                                            <option>Web Developer</option>
+                                            <option>Android Developer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Reports To <span class="text-danger">*</span></label>
+                                        <select class="select">
+                                            <option>-</option>
+                                            <option>Wilmer Deluna</option>
+                                            <option>Lesley Grauer</option>
+                                            <option>Jeffery Lalor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Profile Modal -->
+
+        <!-- Personal Info Modal -->
+        <div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Personal Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Passport No</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Passport Expiry Date</label>
+                                        <div class="cal-icon">
+                                            <input class="form-control datetimepicker" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tel</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nationality <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Religion</label>
+                                        <div class="cal-icon">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Marital status <span class="text-danger">*</span></label>
+                                        <select class="select form-control">
+                                            <option>-</option>
+                                            <option>Single</option>
+                                            <option>Married</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Employment of spouse</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>No. of children </label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Personal Info Modal -->
+
+        <!-- Family Info Modal -->
+        <div id="family_info_modal" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Family Informations</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-scroll">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Family Member <a href="javascript:void(0);"
+                                                                                class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Name <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Relationship <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Date of birth <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Phone <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Education <a href="javascript:void(0);"
+                                                                            class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Name <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Relationship <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Date of birth <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Phone <span class="text-danger">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-more">
+                                            <a href="javascript:void(0);"><i class="fa fa-plus-circle"></i> Add More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Family Info Modal -->
+
+        <!-- Emergency Contact Modal -->
+        <div id="emergency_contact_modal" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Personal Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Primary Contact</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Relationship <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Phone <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Phone 2</label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Primary Contact</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Relationship <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Phone <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Phone 2</label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Emergency Contact Modal -->
+
+        <!-- Training Modal -->
+        <div id="training_info" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> What should I talk about?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-scroll">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2>Communicate, Coach, Care</h2>
+
+                                        <div class="col-md-12">
+
+                                            <h3>Communicate</h3>
+                                            <ul>
+                                                <li>Communicate with your employee that you are concerned about their
+                                                    well being.
+                                                </li>
+                                                <li>Make this a positive call. Stress that your number one concern is
+                                                    for their safety and you are glad that they are
+                                                    okay.
+                                                </li>
+                                                <li>The goal of the conversation is not to find fault. It is to help
+                                                    drivers be as safe and productive as possible on the
+                                                </li>
+                                                road.
+                                            </ul>
+                                            <h3>Coaching Topics / Talking Points</h3>
+                                            <ul>
+                                                <h4>Personal – Financial Issue </h4>
+                                                <li>Talking to a driver about these sorts of issues requires a
+                                                    great deal of care and concern
+                                                </li>
+                                                <li>Is there anything that has happened recently that is
+                                                    bothering you?
+                                                </li>
+                                                <li>Has the company met your expectations for miles and
+                                                    trips in the past few weeks?
+                                                </li>
+                                                <li>Are there any additional resources the company could
+                                                    provide to make you feel more secure with your work?
+                                                </li>
+                                                <li>How are things at home?
+                                                    o Any major life changes recently?
+                                                    o Financial concerns?
+                                                </li>
+                                                <h4>Care</h4>
+
+                                                </li>
+                                                <li>Close the call on a positive note. Let your driver know you are
+                                                    there to help them in the future.
+                                                </li>
+                                                <li>Your number one concern is their safe arrival and personal safety.
+                                                </li>
+                                                <li>Let your employee know if they ever feel they are not getting proper
+                                                    support from the company that they
+                                                    should contact you.
+                                                </li>
+                                                <li>Follow-up with the driver in a week to see how they are progressing
+                                                    with any items discussed during the
+                                                    conversation.
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Training Modal -->
+
+        <!-- Education Modal -->
+        <div id="education_info" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Education</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-scroll">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Education <a href="javascript:void(0);"
+                                                                            class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Oxford University"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Institution</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Computer Science"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Subject</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <div class="cal-icon">
+                                                        <input type="text" value="01/06/2002"
+                                                               class="form-control floating datetimepicker">
+                                                    </div>
+                                                    <label class="focus-label">Starting Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <div class="cal-icon">
+                                                        <input type="text" value="31/05/2006"
+                                                               class="form-control floating datetimepicker">
+                                                    </div>
+                                                    <label class="focus-label">Complete Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="BE Computer Science"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Degree</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Grade A" class="form-control floating">
+                                                    <label class="focus-label">Grade</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Education <a href="javascript:void(0);"
+                                                                            class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Oxford University"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Institution</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Computer Science"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Subject</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <div class="cal-icon">
+                                                        <input type="text" value="01/06/2002"
+                                                               class="form-control floating datetimepicker">
+                                                    </div>
+                                                    <label class="focus-label">Starting Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <div class="cal-icon">
+                                                        <input type="text" value="31/05/2006"
+                                                               class="form-control floating datetimepicker">
+                                                    </div>
+                                                    <label class="focus-label">Complete Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="BE Computer Science"
+                                                           class="form-control floating">
+                                                    <label class="focus-label">Degree</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus focused">
+                                                    <input type="text" value="Grade A" class="form-control floating">
+                                                    <label class="focus-label">Grade</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-more">
+                                            <a href="javascript:void(0);"><i class="fa fa-plus-circle"></i> Add More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Education Modal -->
+
+        <!-- Experience Modal -->
+        <div id="experience_info" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Experience Informations</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-scroll">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Experience Informations <a href="javascript:void(0);"
+                                                                                          class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="Digital Devlopment Inc">
+                                                    <label class="focus-label">Company Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="United States">
+                                                    <label class="focus-label">Location</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="Web Developer">
+                                                    <label class="focus-label">Job Position</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control floating datetimepicker"
+                                                               value="01/07/2007">
+                                                    </div>
+                                                    <label class="focus-label">Period From</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control floating datetimepicker"
+                                                               value="08/06/2018">
+                                                    </div>
+                                                    <label class="focus-label">Period To</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Experience Informations <a href="javascript:void(0);"
+                                                                                          class="delete-icon"><i
+                                                class="fa fa-trash-o"></i></a></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="Digital Devlopment Inc">
+                                                    <label class="focus-label">Company Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="United States">
+                                                    <label class="focus-label">Location</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating"
+                                                           value="Web Developer">
+                                                    <label class="focus-label">Job Position</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control floating datetimepicker"
+                                                               value="01/07/2007">
+                                                    </div>
+                                                    <label class="focus-label">Period From</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-focus">
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control floating datetimepicker"
+                                                               value="08/06/2018">
+                                                    </div>
+                                                    <label class="focus-label">Period To</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-more">
+                                            <a href="javascript:void(0);"><i class="fa fa-plus-circle"></i> Add More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Experience Modal -->
+
+    </div>
+    <!-- /Page Wrapper -->
+
+</div>
+<!-- /Main Wrapper -->
+
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Slimscroll JS -->
+<script src="{{ url_for('static', filename='js/jquery.slimscroll.min.js') }}"></script>
+
+<!-- Select2 JS -->
+<script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+
+<!-- Datetimepicker JS -->
+<script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
+
+<!-- Tagsinput JS -->
+<script src="{{ url_for('static', filename='plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+
+<!-- Custom JS -->
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

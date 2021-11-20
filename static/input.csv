@@ -1,0 +1,14 @@
+driver_id,first_name,last_name,designation,quit_score,previous_score,reason,tenure_days,days_worked,driving_time_per_week,onduty_time_per_week,day_sleep_time_per_week,night_sleep_time_per_week
+FT-0001,John,Bazolla,Driver,90,70,Inconsistent driving hours,180 days or more,5,35,58,11,38
+FT-0002,Richard ,Miles,Driver,83,65,Very low driving hours,90 - 120 days,0,0,0,0,0
+FT-0010,Loren,Gatlin,Driver,82,76,Low tenure and lack of skill,Less than 30 Days,6,38,52,3,32
+FT-0013,Tarah,Shropshire,Driver,76,72,Lack of night sleep time and frequent changes in shift,180 days or more,6,40,54,18,27
+FT-0003,Ricardo,Ramirez,Driver,72,43,Very low driving hours,90 - 120 days,4,27,38,24,6
+FT-0012,Catherine,Manseau,Driver,58,61,,Less than 30 Days,5,39,68,3,38
+FT-0006,Wilmer,Deluna,Driver,57,43,,30 - 60 days,6,41,61,5,39
+FT-0004,Emilie,Shorsham,Driver,52,51,,120 - 180 days,5,39,56,7,35
+FT-0007,Jeffrey,Warden,Driver,41,62,,90 - 120 days,6,42,58,8,39
+FT-0008,Bernardo,Galaviz,Driver,32,42,,180 days or more,6,42,61,7,37
+FT-0005,Mike,Litorus,Driver,23,11,,180 days or more,5,45,52,11,32
+FT-0009,Lesley,Grauer,Driver,21,0,,180 days or more,6,43,64,9,36
+FT-0011,Jeffrey,Warden,Driver,11,23,,180 days or more,6,45,67,9,38
